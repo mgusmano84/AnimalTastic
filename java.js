@@ -10,12 +10,16 @@ $(document).ready(function () {
 			url: api,
 			method: "GET",
 		}).done(function(response) {
-			console.log(response);
+			console.log(response.data);
 			var results= response.data;
-			for (i= 0; i<results.length; i++);
-				
-			var image = response.data.bitly_gif_url;
-			$('.items').append(image);
+				for (var i = 0; i < results.length; i++) {
+				var p = $('<p>').text("Rating: " + results[i].rating);	
+				var animalType=$('.items');
+				var animalImage= $('<img>');
+				animalImage.attr("src", results[i].images.fixed_width_small.url);
+				animalType.append(p);
+				animalType.append(animalImage);
+			};
 
 		});
 			
