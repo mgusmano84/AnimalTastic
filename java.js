@@ -11,8 +11,12 @@ $(document).ready(function () {
 			method: "GET",
 		}).done(function(response) {
 			console.log(response);
-			
-			$('.items').append(response.data[0].rating)
+			var results= response.data;
+			for (i= 0; i<results.length; i++);
+				
+			var image = response.data.bitly_gif_url;
+			$('.items').append(image);
+
 		});
 			
 		});
