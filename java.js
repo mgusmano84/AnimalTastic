@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-	var title= "dogs";
-	var api= "http://api.giphy.com/v1/gifs/search?q="+ title +"&api_key=dc6zaTOxFJmzC";
+	var animals= "dogs";
+	var api= "http://api.giphy.com/v1/gifs/search?q="+ animals +"&api_key=dc6zaTOxFJmzC";
 
 	function displayAnimals(){
 
@@ -11,6 +11,8 @@ $(document).ready(function () {
 			method: "GET",
 		}).done(function(response) {
 			console.log(response);
+			
+			$('.items').append(response.data[0].rating)
 		});
 			
 		});
