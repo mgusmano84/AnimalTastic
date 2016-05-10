@@ -17,8 +17,9 @@ $(document).ready(function () {
 
 	//Create the display of each animal
 	function displayAnimals(){
+		var animal = $(this).attr('data-name');
 		var api= "http://api.giphy.com/v1/gifs/search?q="+ animal +"&api_key=dc6zaTOxFJmzC";
-		var animal= "$(this).attr('data-name')";
+		
 		
 		//ajax pulls the data from giphy
 		$.ajax({
@@ -27,6 +28,7 @@ $(document).ready(function () {
 		}).done(function(response) {
 			console.log(response.data);
 			var results= response.data;
+			$('.items').empty();
 			for (var i = 0; i < results.length; i++) {
 				var p = $('<p>').text("Rating: " + results[i].rating);	
 				var animalType=$('.items');
@@ -40,7 +42,8 @@ $(document).ready(function () {
 					
 	renderbuttons();
 	// $(document).on('click', '.movie', displayAnimals);
-	$(".animalClass").click(displayAnimals());
+	$('.animalClass').on('click', displayAnimals)
+	
 
 
 	
