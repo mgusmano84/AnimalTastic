@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-	var animals= "dogs";
+	var animals= ["dog", "cat", "rabbit", "hamster", "skunk", "goldfish", "bird", "ferret", "turtle", "sugar glider", "chinchilla", "hedgehog", "hermit crab", "gerbil", "pygmy goat", "chicken", "capybara", "teacup pig", "serval", "salamander", "frog"];
 	var api= "http://api.giphy.com/v1/gifs/search?q="+ animals +"&api_key=dc6zaTOxFJmzC";
 
 	function displayAnimals(){
@@ -20,6 +20,9 @@ $(document).ready(function () {
 				animalType.append(p);
 				animalType.append(animalImage);
 			};
+		function renderbuttons(){
+			
+		}
 
 		});
 			
