@@ -32,11 +32,16 @@ $(document).ready(function () {
 			for (var i = 0; i < results.length; i++) {
 				var p = $('<p>').text("Rating: " + results[i].rating);	
 				var animalType=$('.items');
+				var animalDiv=$("<div>")
 				var animalImage= $('<img>');
 				animalImage.attr("src", results[i].images.fixed_height.url);
-				animalImage.addClass("col-sm-4 colmove");
-				animalType.append(p);
-				animalType.append(animalImage);
+				animalImage.addClass("animals")
+				animalDiv.addClass("col-sm-3")
+				animalDiv.append(p)
+				animalDiv.append(animalImage)
+				// animalImage.addClass("col-sm-3 colmove");
+				animalType.append(animalDiv);
+				// animalType.append(animalImage);
 			};
 		});
 	};
