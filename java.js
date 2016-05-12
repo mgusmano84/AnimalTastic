@@ -33,7 +33,10 @@ $(document).ready(function () {
 				var animalType=$('.items');
 				var animalDiv=$("<div>");
 				var animalImage= $('<img>');
-				animalImage.attr("src", results[i].images.fixed_height.url);
+				animalImage.attr("src", results[i].images.downsized_still.url);
+				animalImage.attr("data-state", "still")
+				animalImage.attr("data-still", results[i].images.downsized_still.url)
+				animalImage.attr("data-animate", results[i].images.downsized.url)
 				animalImage.addClass("animals");
 				animalDiv.addClass("col-sm-3");
 				animalDiv.append(p);
@@ -51,6 +54,21 @@ $(document).ready(function () {
 		return false;
 
 	});
+
+	$('.animals').on('click', function(){
+		var state = $(this).attr('data-state'); 
+
+
+	if ( state == 'still' ){
+                $(this).attr('src', $(this).data('animate'));
+                $(this).attr('data-state', 'animate');
+            }else{
+                $(this).attr('src', $(this).data('still'));
+                $(this).attr('data-state', 'still');
+            }
+    });
+
+
 	//This calls the buttons to render and be ready for on on click			
 	renderbuttons();
 	$('.animalClass').on('click', displayAnimals);
