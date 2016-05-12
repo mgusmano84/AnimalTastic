@@ -33,8 +33,8 @@ $(document).ready(function () {
 				var p = $('<p>').text("Rating: " + results[i].rating);	
 				var animalType=$('.items');
 				var animalImage= $('<img>');
-				animalImage.attr("src", results[i].images.fixed_width_small.url);
-				animalImage.addClass("col-md-4");
+				animalImage.attr("src", results[i].images.fixed_height.url);
+				animalImage.addClass("col-sm-4 colmove");
 				animalType.append(p);
 				animalType.append(animalImage);
 			};

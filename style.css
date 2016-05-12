@@ -5,4 +5,23 @@
 h1 {
 	font-size: 40px;
 	text-align: center; 
+	margin-bottom: 20px;
 }
+
+.formsize {
+	width: 300px;
+}
+
+.form-group {
+	margin-top: 20px;
+	margin-left: 25px;
+}
+
+.buttonmove {
+	margin-left: 25px;
+	margin-bottom: 20px;
+}
+
+/*.colmove {
+	margin-left: 20px;
+}*/
