@@ -33,12 +33,12 @@ $(document).ready(function () {
 				var animalType=$('.items');
 				var animalDiv=$("<div>");
 				var animalImage= $('<img>');
-				animalImage.attr("src", results[i].images.downsized_still.url);
+				animalImage.attr("src", results[i].images.fixed_height_still.url);
 				animalImage.attr("data-state", "still")
-				animalImage.attr("data-still", results[i].images.downsized_still.url)
-				animalImage.attr("data-animate", results[i].images.downsized.url)
+				animalImage.attr("data-still", results[i].images.fixed_height_still.url)
+				animalImage.attr("data-animate", results[i].images.fixed_height.url)
 				animalImage.addClass("animals");
-				animalDiv.addClass("col-sm-3");
+				animalDiv.addClass("col-md-3");
 				animalDiv.append(p);
 				animalDiv.append(animalImage);
 				animalType.append(animalDiv);
@@ -55,18 +55,18 @@ $(document).ready(function () {
 
 	});
 
-	$('.animals').on('click', function(){
+	$(document).on('click', '.animals', function(){
 		var state = $(this).attr('data-state'); 
 
 
-	if ( state == 'still' ){
-                $(this).attr('src', $(this).data('animate'));
-                $(this).attr('data-state', 'animate');
-            }else{
-                $(this).attr('src', $(this).data('still'));
-                $(this).attr('data-state', 'still');
-            }
-    });
+		if ( state == 'still' ){
+	                $(this).attr('src', $(this).data('animate'));
+	                $(this).attr('data-state', 'animate');
+	            }else{
+	                $(this).attr('src', $(this).data('still'));
+	                $(this).attr('data-state', 'still');
+	            }
+	    });
 
 
 	//This calls the buttons to render and be ready for on on click			
