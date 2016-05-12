@@ -55,9 +55,9 @@ $(document).ready(function () {
 
 	});
 
+	//On click of the image it will pause or animate it
 	$(document).on('click', '.animals', function(){
 		var state = $(this).attr('data-state'); 
-
 
 		if ( state == 'still' ){
 	                $(this).attr('src', $(this).data('animate'));
