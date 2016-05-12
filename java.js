@@ -51,6 +51,7 @@ $(document).ready(function () {
 		var animalSelection= $('#exampleInputName2').val().trim();
 		animals.push(animalSelection);
 		renderbuttons();
+		$('.animalClass').on('click', displayAnimals);
 		return false;
 
 	});
