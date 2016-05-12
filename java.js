@@ -14,7 +14,6 @@ $(document).ready(function () {
 			$('#buttons').append(a);
 		}
 	}
-
 	//Create the display of each animal
 	function displayAnimals(){
 		var animal = $(this).attr('data-name');
@@ -44,24 +43,19 @@ $(document).ready(function () {
 			}
 		});
 	}
-
 	//This create a new button when clicked
 	$('.buttonmove').on('click', function(){
-		var animalSelection= $('#animalsec').val.trim();
+		var animalSelection= $('#exampleInputName2').val().trim();
 		animals.push(animalSelection);
 		renderbuttons();
 		return false;
 
-
 	});
-					
+	//This calls the buttons to render and be ready for on on click			
 	renderbuttons();
-	// $(document).on('click', '.movie', displayAnimals);
 	$('.animalClass').on('click', displayAnimals);
 	
 
-
-	
 
 
 });
@@ -69,10 +63,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-// $(".animalType").click(function() {});
 
 
 
