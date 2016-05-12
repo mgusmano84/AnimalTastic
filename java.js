@@ -13,7 +13,7 @@ $(document).ready(function () {
 			a.text(animals[i]);
 			$('#buttons').append(a);
 		}
-	};
+	}
 
 	//Create the display of each animal
 	function displayAnimals(){
@@ -32,23 +32,32 @@ $(document).ready(function () {
 			for (var i = 0; i < results.length; i++) {
 				var p = $('<p>').text("Rating: " + results[i].rating);	
 				var animalType=$('.items');
-				var animalDiv=$("<div>")
+				var animalDiv=$("<div>");
 				var animalImage= $('<img>');
 				animalImage.attr("src", results[i].images.fixed_height.url);
-				animalImage.addClass("animals")
-				animalDiv.addClass("col-sm-3")
-				animalDiv.append(p)
-				animalDiv.append(animalImage)
-				// animalImage.addClass("col-sm-3 colmove");
+				animalImage.addClass("animals");
+				animalDiv.addClass("col-sm-3");
+				animalDiv.append(p);
+				animalDiv.append(animalImage);
 				animalType.append(animalDiv);
-				// animalType.append(animalImage);
-			};
+				
+			}
 		});
-	};
+	}
+
+	//This create a new button when clicked
+	$('.buttonmove').on('click', function(){
+		var animalSelection= $('#animalsec').val.trim();
+		animals.push(animalSelection);
+		renderbuttons();
+		return false;
+
+
+	});
 					
 	renderbuttons();
 	// $(document).on('click', '.movie', displayAnimals);
-	$('.animalClass').on('click', displayAnimals)
+	$('.animalClass').on('click', displayAnimals);
 	
 
 
